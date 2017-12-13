@@ -1,0 +1,36 @@
+<div class="search-results" style="height: 100%; overflow: scroll;"
+     infiniteScroll
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="50"
+     (scrolled)="onScroll()"
+     [scrollWindow]="false">
+  <div class="container"
+       fxLayout
+       fxLayout.xs="row"
+       fxLayoutAlign="center"
+       fxLayoutGap="10px"
+       fxLayoutGap.xs="0"
+       fxLayoutWrap>
+
+    <mat-card fxFlex class="mat-card" *ngFor="let gnome of gnomePaginated; trackBy: trackByFn">
+
+      <mat-card-header fxLayout="row" fxLayoutAlign="center center">
+        <mat-card-title class="mat-card-title">{{gnome.name}}</mat-card-title>
+      </mat-card-header>
+
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <img mat-card-image src="{{gnome.thumbnail}}" class="avatar">
+      </div>
+
+      <mat-card-content>
+        <label fxLayout="row" fxLayoutAlign="center center">Age: {{gnome.age}}</label> <br>
+        <label fxLayout="row" fxLayoutAlign="center center">Height: {{gnome.height}}</label><br>
+        <label fxLayout="row" fxLayoutAlign="center center">Hair Color: {{gnome.hair_color}}</label>
+      </mat-card-content>
+      <mat-card-actions fxLayout="row" fxLayoutAlign="center center">
+        <button mat-raised-button color="primary" (click)="viewDetail(gnome)">VIEW DETAILS</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+

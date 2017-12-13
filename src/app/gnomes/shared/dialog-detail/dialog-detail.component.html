@@ -1,0 +1,22 @@
+<mat-dialog-content>
+  <h3 class="mat-card-title">{{gnome.name}}</h3>
+
+  <img mat-card-image src="{{gnome.thumbnail}}" class="avatar">
+
+  <label fxLayout="row" fxLayoutAlign="center center">Age: {{gnome.age}}</label> <br>
+  <label fxLayout="row" fxLayoutAlign="center center">Height: {{gnome.height}}</label><br>
+  <label fxLayout="row" fxLayoutAlign="center center">Hair Color: {{gnome.hair_color}}</label>
+
+  <h4 fxLayout="row" *ngIf="gnome.professions.length >0" fxLayoutAlign="center center">Professions</h4>
+  <mat-list role="list">
+    <mat-list-item *ngFor="let profession of gnome.professions">
+      {{profession}}
+    </mat-list-item>
+  </mat-list>
+  <h4 fxLayout="row" *ngIf="gnome.friends.length > 0" fxLayoutAlign="center center">Friends</h4>
+  <mat-list role="list">
+    <mat-list-item *ngFor="let friend of gnome.friends">
+      {{friend}}
+    </mat-list-item>
+  </mat-list>
+</mat-dialog-content>
