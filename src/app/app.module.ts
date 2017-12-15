@@ -62,5 +62,3 @@ import { DialogDetailComponent } from './gnomes/shared/dialog-detail/dialog-deta
 })
 export class AppModule {
 }
-
-platformBrowserDynamic().bootstrapModule(AppModule);
